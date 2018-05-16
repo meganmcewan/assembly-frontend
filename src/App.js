@@ -1,42 +1,32 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Home from "./components/Home.js";
+import About from './components/About.js'
+import Nav from "./components/Nav.js";
+import Footer from "./components/Footer.js";
+import Projects from "./components/Projects";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
-  constructor(){
-    super();
-    this.state = {
-      projects : []
-    }
-  }
-
-  componentDidMount(){
-    let projectsURL = 'http://localhost:8888/wp-json/wp/v2/projects'
-    fetch(projectsURL)
-    .then(response => response.json())
-    .then(response =>{
-      this.setState({projects : response})
-    })
-
-  }
-
+  
   render() {
-    
-    let projects = this.state.projects.map((project, index)=>{
-      return (
-        
-        <div key = {index}>
-        <img src={project.better_featured_image.media_details.sizes.medium.source_url}
-            alt ={project.better_featured_image.alt_text}
-            />
-        </div>
-      )
-    })
-
+   
     return (
-      <div className="App">
-        <h1>Projects</h1>
-        {projects}
-      </div>
+
+      <Router>
+        <div className="App">
+          <Nav />
+          <Route exact path = '/' component ={Home}/>
+          <Route path = '/about' component ={About}/>
+
+          {/* <Route
+          path='/projects'
+          render={(props) => <Projects {...props} id={this.project.id} />}
+        /> */}
+          <Route path = '/projects' component ={Projects}/>
+          <Footer />
+        </div>
+      </Router>
     );
   }
 }
