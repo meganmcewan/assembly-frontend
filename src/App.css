@@ -19,7 +19,8 @@
 .img-cover img {
   flex-shrink: 0;
   min-width: 100%;
-  min-height: 100%
+  min-height: 100%;
+ 
 }
 
 .gallery {
@@ -30,27 +31,49 @@
 .gallery-block{
   display: block;
   justify-content: space-around;
-
-
 }
+
 .gallery-block-small{
-  background-color: aquamarine
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
 
 }
 
-.gallery-img img {
-  max-width: 45vw
+.img-gallery {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden
+}
+.img-gallery img {
+  flex-shrink: 0;
+  min-width: 40vw;
+  min-height: 48vh;
+  margin: 5vw 5vw 2.5vw 5vw;
+  float: left;
 }
 
-/* .gallery-img-large img{
-  width: 100 vw;
-  
-} */
+.project-title{
+  font-size: 8vw;
+  margin: 2vw;
+  margin-top: 4vw;
+  color: grey
+}
 
 .project-info{
-  background-color: grey;
-  color: white;
-  font-size: 2vw;
-  padding-top: 2vw;
-  padding-bottom: 2vw
+ 
+  color: grey;
+  font-style: italic;
+  font-size: 1.5vw;
+  padding-top: 4vw;
+  padding-bottom: 4vw;
+  line-height: 4vh;
 }
+
+
+
+
+
+
