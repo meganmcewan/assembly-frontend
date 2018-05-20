@@ -36,23 +36,21 @@
 .gallery-block-small{
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   overflow: hidden;
 
 }
 
-.img-gallery {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  overflow: hidden
-}
+
 .img-gallery img {
   flex-shrink: 0;
-  min-width: 40vw;
-  min-height: 48vh;
-  margin: 5vw 5vw 2.5vw 5vw;
-  float: left;
+
+  margin-top: 5vw;
+  margin-right: 2vw;
+  margin-left: 2vw;
+  margin-bottom: 5vw;
+  width: 40vw;
+  height: auto;
 }
 
 .project-title{
