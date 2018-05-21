@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../App.css';
-
 import { Link, } from 'react-router-dom'
 
 
@@ -10,9 +9,12 @@ class Nav extends Component {
 
     return (
 
-          <div className="App">
-             <Link to='/'> Asssembly Home Design</Link>
-             <Link to= '/about'> About </Link>
+          <div className="nav">
+          
+             <Link className='link' to='/'> ASSEMBLY HOME DESIGN</Link>
+             <Link className='link' to= '/about'> ABOUT </Link>
+             <Link className='link' to= '/furniture-design'> FURNITURE DESIGN </Link>
+             <Link className='link' to= '/home-goods'> HOME GOODS </Link>
           </div>
        
     );

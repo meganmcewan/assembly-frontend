@@ -22,7 +22,6 @@ class Projects extends Component {
 
   displayProject = () => {
     return (
-
       <div className="gallery">
         <div className="gallery-block">
           <div className="img-cover">
@@ -33,23 +32,30 @@ class Projects extends Component {
           </div>
 
           <div className="gallery-block-small">
-          <div className='img-gallery'>
-            <img
+          <div className='rectangle-top'></div>
+          <div className='rectangle-bottom'></div> 
+            <div className="img-gallery-top">
+              <img
                 src={this.state.project.acf.image_2.sizes.medium_large}
                 alt={this.state.project.acf.image_2.alt}
               />
-          </div>
-          <div className='img-gallery'>
-              <img     
-              src={this.state.project.acf.image_3.sizes.medium_large}
-              alt={this.state.project.acf.image_3.alt}
-            />
-          </div>
-           
+            </div>
+                 
+            <div className="img-gallery-bottom">
+              <img
+                src={this.state.project.acf.image_3.sizes.medium_large}
+                alt={this.state.project.acf.image_3.alt}
+              />
+            </div>
           </div>
         </div>
 
-        <div className="project-info">{this.state.project.content.rendered}</div>
+        <div
+          className="project-info"
+          dangerouslySetInnerHTML={{
+            __html: this.state.project.content.rendered
+          }}
+        />
 
         <div className="gallery-block">
           <div className="img-cover">
@@ -59,24 +65,19 @@ class Projects extends Component {
             />
           </div>
 
-          <div className="gallery-block-small">
-          <div className='img-gallery'>
+          <div className="img-cover">
             <img
-                src={this.state.project.acf.image_5.sizes.medium_large}
-                alt={this.state.project.acf.image_5.alt}
-              />
-          </div>
-          <div className='img-gallery'>
-              <img     
-              src={this.state.project.acf.image_6.sizes.medium_large}
-              alt={this.state.project.acf.image_6.alt}
+              src={this.state.project.acf.image_5.sizes.large}
+              alt={this.state.project.acf.image_5.alt}
             />
           </div>
-           
-          </div>
+          {/* <div className="img-cover">
+            <img
+              src={this.state.project.acf.image_6.sizes.large}
+              alt={this.state.project.acf.image_6.alt}
+            />
+          </div> */}
         </div>
-
-  
       </div>
     );
   };
@@ -84,9 +85,9 @@ class Projects extends Component {
   render() {
     return (
       <div className="App">
-        <h1 className='project-title'>
-        {this.state.project ?this.state.project.title.rendered: null}
-        </h1>      
+        <h1 className="project-title">
+          {this.state.project ? this.state.project.title.rendered : null}
+        </h1>
         {this.state.project ? this.displayProject() : null}
       </div>
     );

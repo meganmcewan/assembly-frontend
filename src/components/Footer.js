@@ -9,9 +9,15 @@ class Footer extends Component {
   render() {
 
     return (
-        <div className="App">
-            <Link to='/'> Asssembly Home Design</Link>
-            <Link to= '/about'> About </Link>
+        <div className="nav">
+            <Link className='link' to='/'> ASSEMBLY HOME DESIGN</Link>
+            <Link className='link' to= '/about'> ABOUT </Link>
+            <div className='contact-info'>
+              <div>CONTACT:</div>
+              <div>Shanna Floodstrom</div>
+              <div>info@assemblyhomedesign.com</div>
+            </div>
+                    
         </div>
        
     );

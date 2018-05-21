@@ -25,16 +25,22 @@ class Home extends Component {
       .then(response => {
         this.setState({ furniture: response });
       });
+
+    let goodsURL = "http://localhost:8888/wp-json/wp/v2/home-goods";
+    fetch(goodsURL)
+      .then(response => response.json())
+      .then(response => {
+        this.setState({ goods: response });
+      });
   }
 
   displayFurniture = () => {
     let furniture = this.state.furniture[0];
-    console.log("this is furniture", furniture);
     return (
       <div className="img-cover">
         <Link
           to={{
-            pathname: "/furniture",
+            pathname: "/furniture-design",
             state: {
               id: furniture.id.toString()
             }
@@ -50,6 +56,33 @@ class Home extends Component {
         </Link>
       </div>
     );
+  };
+
+  displayGoods = () => {
+    let goods = this.state.goods.slice(0, 3);
+    goods = goods.map((good, index) => {
+      return (
+        <div key={index}>
+          <Link
+            to={{
+              pathname: "/goods",
+              state: {
+                id: good.id.toString()
+              }
+            }}
+          >
+            <img
+              src={
+                good.better_featured_image.media_details.sizes.medium_large
+                  .source_url
+              }
+              alt={good.better_featured_image.alt_text}
+            />
+          </Link>
+        </div>
+      );
+    });
+    return goods;
   };
 
   render() {
@@ -81,6 +114,7 @@ class Home extends Component {
         <h1 className="header-banner" />
         <div>{projects}</div>
         {this.state.furniture ? this.displayFurniture() : null}
+        <div className='goods-gallery'>{this.state.goods ? this.displayGoods() : null}</div>
       </div>
     );
   }
