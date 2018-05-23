@@ -10,13 +10,7 @@
   text-align: center;
 }
 
-.header-banner{
-  background-image: url(localMedia/ASSEMBLY-BUSINESSCARD.jpg);
-  height: 90vh;
-  background-size: cover;
-  background-position: center;
 
-}
 
 .nav {
   display: flex;
@@ -34,6 +28,33 @@
   color: grey
 }
 
+.header-banner{
+  background-image: url(localMedia/ASSEMBLY-BUSINESSCARD.jpg);
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+ 
+}
+
+.banner-parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+.band{
+  text-align:center; 
+  padding: 50px 80px;
+  font-size: 4vw;
+  background-color: grey;
+  opacity: 0.4;
+  position: relative;
+  
+
+
+}
+
 .img-cover {
   display: block;
   justify-content: center;
@@ -44,8 +65,19 @@
   flex-shrink: 0;
   min-width: 100%;
   min-height: 100%;
- 
+  
 }
+.img-opacity img{
+  opacity: 0.7;
+
+}
+
+
+.img-opacity :hover img{
+  opacity: 1;
+}
+
+
 
 .gallery {
   padding: 5vw
@@ -200,6 +232,12 @@
 .contact-info{
   color: grey;
   text-align: start;
+}
+
+.about-wrapper{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap
 }
 
 

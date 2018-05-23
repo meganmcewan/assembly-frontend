@@ -37,7 +37,7 @@ class Home extends Component {
   displayFurniture = () => {
     let furniture = this.state.furniture[0];
     return (
-      <div className="img-cover">
+      <div className="img-cover img-opacity">
         <Link
           to={{
             pathname: "/furniture-design",
@@ -62,7 +62,7 @@ class Home extends Component {
     let goods = this.state.goods.slice(0, 3);
     goods = goods.map((good, index) => {
       return (
-        <div key={index}>
+        <div className= 'img-opacity' key={index}>
           <Link
             to={{
               pathname: "/goods",
@@ -88,7 +88,8 @@ class Home extends Component {
   render() {
     let projects = this.state.projects.map((project, index) => {
       return (
-        <div className="img-cover" key={index}>
+        <div className="img-cover img-opacity" key={index}>
+        
           <Link
             to={{
               pathname: "/projects",
@@ -97,7 +98,7 @@ class Home extends Component {
               }
             }}
           >
-            <img
+            <img 
               src={
                 project.better_featured_image.media_details.sizes.large
                   .source_url
@@ -105,16 +106,29 @@ class Home extends Component {
               alt={project.better_featured_image.alt_text}
             />
           </Link>
+          <div className='band'>test test</div>
         </div>
       );
     });
 
     return (
       <div className="App">
-        <h1 className="header-banner" />
+        <h1 className="header-banner img-opacity banner-parallax" />
         <div>{projects}</div>
-        {this.state.furniture ? this.displayFurniture() : null}
-        <div className='goods-gallery'>{this.state.goods ? this.displayGoods() : null}</div>
+       
+          <div>
+          <div >
+              {this.state.furniture ? this.displayFurniture() : null}
+              <div className='band'>test test 2</div>
+              </div>
+          
+          </div>
+             
+         
+          
+      
+        <div className='goods-gallery '>{this.state.goods ? this.displayGoods() : null}</div>
+        <div className='band'>test test 3</div>
       </div>
     );
   }
