@@ -40,9 +40,12 @@ class Goods extends Component{
     render(){
         return(
             <div>
-                <h1 className='project-title' >ASSEMBLY HOME GOODS</h1>
-                <div className = 'goods-gallery'>
-                {this.state.goods?this.displayGoods():null}
+                <h1 className='project-title' >HOME GOODS design</h1>
+                <div className='gallery'>
+                    <div className = 'project-info goods-info'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</div>
+                    <div className = 'goods-gallery'>
+                    {this.state.goods?this.displayGoods():null}
+                    </div>
                 </div>
             </div>
         )

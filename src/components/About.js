@@ -24,6 +24,7 @@ class About extends Component {
     return (
       <div>
         <h1 className="project-title">ABOUT</h1>
+        <div className='gallery'>
         <div className='about-wrapper'>
           <img
             src={
@@ -32,13 +33,19 @@ class About extends Component {
             }
             alt={about.better_featured_image.alt_text}
           />
+          <div>
+          <div className='about-title'>SHANNA flodstrom</div>
+            <div
+              className="project-info about-info"
+              dangerouslySetInnerHTML={{
+                __html: about.content.rendered
+              }}
+            />
+          </div>
+          </div>
+            
         </div>
-        <div
-          className="project-info"
-          dangerouslySetInnerHTML={{
-            __html: about.content.rendered
-          }}
-        />
+   
       </div>
     );
   };
